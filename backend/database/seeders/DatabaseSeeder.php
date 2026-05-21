@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'rafialamienakbar27@gmail.com',
                 'phone' => '+62 895-2593-7058',
                 'location' => 'Bandung, Indonesia',
-                'avatar_url' => 'https://portfolio-six-pearl-22.vercel.app/assets/img/perfil.png',
+                'avatar_url' => 'https://portfolio-six-pearl-22.vercel.app/assets/img/rafi.png',
                 'cv_url' => 'https://drive.google.com/file/d/19HZvXC8zq_4KLMrH6FuWrX9cgsR7FvQQ/view?usp=sharing',
                 'github_url' => 'https://github.com/rafialamienakbar27',
                 'linkedin_url' => 'https://www.linkedin.com/in/rafialamienakbar/',
