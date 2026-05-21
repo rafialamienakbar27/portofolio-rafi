@@ -7,4 +7,4 @@ for i in $(seq 1 30); do
 done
 php artisan db:seed --force --no-interaction || true
 php artisan config:cache || true
-exec php -S 0.0.0.0:${PORT:-8080} -t public/
+exec php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
