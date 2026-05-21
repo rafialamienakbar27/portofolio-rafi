@@ -1,0 +1,34 @@
+{
+  "name": "portfolio-rafi-frontend",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Rafi Alamien Akbar — Portfolio (Nuxt 4 + GSAP + Lenis)",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "@pinia/nuxt": "^0.5.5",
+    "@vueuse/core": "^11.0.3",
+    "@vueuse/nuxt": "^11.0.3",
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.13",
+    "nuxt": "^3.13.0",
+    "pinia": "^2.2.2",
+    "vue": "^3.5.0",
+    "vue-router": "^4.4.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.10.0",
+    "postcss": "^8.4.45",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4"
+  }
+}

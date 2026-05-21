@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ====================================================
+   Base
+   ==================================================== */
+:root {
+  --color-ink: #0A0A0F;
+  --color-bone: #F2F1EA;
+  --color-ember: #FF6A3D;
+  --cursor-x: 50%;
+  --cursor-y: 50%;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background: var(--color-ink);
+  color: var(--color-bone);
+  font-family: 'Inter Tight', sans-serif;
+}
+
+body {
+  background: var(--color-ink);
+  overflow-x: hidden;
+}
+
+/* Custom selection */
+::selection {
+  background: var(--color-ember);
+  color: var(--color-ink);
+}
+
+/* Scrollbar (only when not using Lenis) */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #06060A; }
+::-webkit-scrollbar-thumb { background: #252533; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #FF6A3D; }
+
+/* ====================================================
+   Lenis smooth-scroll classes
+   ==================================================== */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ====================================================
+   Typography helpers
+   ==================================================== */
+.font-display-italic {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 1;
+}
+
+.text-balance { text-wrap: balance; }
+.text-pretty { text-wrap: pretty; }
+
+/* ====================================================
+   Marquee
+   ==================================================== */
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 40s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ====================================================
+   Noise overlay (subtle texture)
+   ==================================================== */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='1'/%3E%3CfeColorMatrix values='0 0 0 0 0.96 0 0 0 0 0.94 0 0 0 0 0.85 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ====================================================
+   Magnetic / cursor follower base
+   ==================================================== */
+.cursor-blob {
+  position: fixed;
+  top: 0; left: 0;
+  width: 36px; height: 36px;
+  border-radius: 9999px;
+  background: var(--color-ember);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(var(--cursor-x), var(--cursor-y)) translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+}
+.cursor-blob.hover {
+  width: 90px; height: 90px;
+}
+
+/* ====================================================
+   Page transitions
+   ==================================================== */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* ====================================================
+   Reveal helpers (GSAP will set initial state, this is fallback)
+   ==================================================== */
+.reveal-line {
+  display: block;
+  overflow: hidden;
+}
+.reveal-line > * {
+  display: inline-block;
+}
+
+/* ====================================================
+   Project card hover
+   ==================================================== */
+.project-card {
+  position: relative;
+  isolation: isolate;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%),
+                              rgba(255, 106, 61, 0.15),
+                              transparent 40%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+  border-radius: inherit;
+}
+.project-card:hover::before { opacity: 1; }
+
+/* ====================================================
+   Admin
+   ==================================================== */
+.admin-input {
+  @apply w-full bg-ink-800 border border-ink-600 rounded-lg px-4 py-2.5
+         text-bone-100 placeholder-bone-400/50
+         focus:outline-none focus:border-ember focus:ring-1 focus:ring-ember
+         transition;
+}
+.admin-label {
+  @apply block text-xs font-medium tracking-wide uppercase text-bone-400 mb-1.5;
+}
+.admin-btn {
+  @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium
+         bg-ember text-ink-900 hover:bg-ember-400 transition
+         disabled:opacity-50 disabled:cursor-not-allowed;
+}
+.admin-btn-ghost {
+  @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium
+         border border-ink-600 text-bone-100 hover:bg-ink-800 transition;
+}
+
+/* ====================================================
+   Print
+   ==================================================== */
+@media print {
+  .cursor-blob, .noise-overlay { display: none !important; }
+}
+
+/* ====================================================
+   Reduced motion
+   ==================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
