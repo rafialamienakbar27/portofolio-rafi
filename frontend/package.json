@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "version": "1.0.0",
-  "description": "Rafi Alamien Akbar — Portfolio (Nuxt 4 + GSAP + Lenis)",
+  "description": "Rafi Al Amien Akbar — Portfolio (Nuxt 4 + GSAP + Lenis)",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",

@@ -14,7 +14,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: "Rafi Alamien Akbar — Full Stack Developer",
+      title: "Rafi Al Amien Akbar — Full Stack Developer",
       htmlAttrs: { lang: "en" },
       meta: [
         { charset: "utf-8" },
@@ -22,9 +22,9 @@ export default defineNuxtConfig({
         {
           name: "description",
           content:
-            "Rafi Alamien Akbar — Full Stack Developer building secure, scalable government information systems in West Java, Indonesia.",
+            "Rafi Al Amien Akbar — Full Stack Developer building secure, scalable government information systems in West Java, Indonesia.",
         },
-        { property: "og:title", content: "Rafi Alamien Akbar — Portfolio" },
+        { property: "og:title", content: "Rafi Al Amien Akbar — Portfolio" },
         { property: "og:type", content: "website" },
         { name: "theme-color", content: "#0A0A0F" },
       ],

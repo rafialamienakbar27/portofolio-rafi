@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         User::updateOrCreate(
             ['email' => 'rafialamienakbar27@gmail.com'],
             [
-                'name' => 'Rafi Alamien Akbar',
+                'name' => 'Rafi Al Amien Akbar',
                 'password' => Hash::make('password'), // GANTI di production!
             ]
         );
@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         Profile::updateOrCreate(
             ['id' => 1],
             [
-                'name' => 'Rafi Alamien Akbar',
+                'name' => 'Rafi Al Amien Akbar',
                 'headline' => 'Full Stack Developer',
                 'hero_tagline' => 'I build secure, scalable, and human-centered information systems for government and education sectors.',
                 'bio' => "Information systems graduate with a deep interest in full-stack development, specializing in government digital services. As part of the Diba GTK team at the West Java Provincial Education Office (Dinas Pendidikan Jabar), I help deliver administrative digital services that touch tens of thousands of teachers and education staff across the province.",
