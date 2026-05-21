@@ -49,22 +49,26 @@ onMounted(() => {
         </button>
       </nav>
 
-      <a
-        v-if="profile?.cv_url"
-        :href="profile.cv_url"
-        target="_blank"
-        rel="noopener"
-        class="group inline-flex items-center gap-2 px-4 py-2 rounded-full
-               border border-ember text-ember font-mono text-xs uppercase tracking-wider
-               hover:bg-ember hover:text-ink-900 transition-all"
-      >
+      <div class="flex items-center gap-3">
+        <ThemeToggle />
+
+        <a
+          v-if="profile?.cv_url"
+          :href="profile.cv_url"
+          target="_blank"
+          rel="noopener"
+          class="group inline-flex items-center gap-2 px-4 py-2 rounded-full
+                 border border-ember text-ember font-mono text-xs uppercase tracking-wider
+                 hover:bg-ember hover:text-ink-900 transition-all"
+        >
         <span>Download CV</span>
         <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
           <polyline points="7 10 12 15 17 10"/>
           <line x1="12" y1="15" x2="12" y2="3"/>
         </svg>
-      </a>
+        </a>
+      </div>
     </div>
   </header>
 </template>

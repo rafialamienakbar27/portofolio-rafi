@@ -37,8 +37,7 @@ onMounted(() => {
 <template>
   <section ref="heroRoot" id="home" class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
     <!-- Background grid -->
-    <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
-      style="background-image: linear-gradient(rgb(242 241 234) 1px, transparent 1px), linear-gradient(90deg, rgb(242 241 234) 1px, transparent 1px); background-size: 80px 80px;" />
+    <div class="hero-grid" />
 
     <!-- Glow orb -->
     <div

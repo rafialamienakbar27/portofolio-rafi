@@ -11,29 +11,28 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Dark editorial palette
         ink: {
-          950: '#06060A',
-          900: '#0A0A0F',
-          800: '#12121A',
-          700: '#1A1A25',
-          600: '#252533',
+          950: 'var(--ink-950)',
+          900: 'var(--ink-900)',
+          800: 'var(--ink-800)',
+          700: 'var(--ink-700)',
+          600: 'var(--ink-600)',
         },
         bone: {
-          50: '#FAFAF7',
-          100: '#F2F1EA',
-          200: '#E5E3D8',
-          300: '#C9C7B8',
-          400: '#9B9A8C',
+          50:  'var(--bone-50)',
+          100: 'var(--bone-100)',
+          200: 'var(--bone-200)',
+          300: 'var(--bone-300)',
+          400: 'var(--bone-400)',
         },
         ember: {
-          DEFAULT: '#FF6A3D',
-          400: '#FF8865',
-          500: '#FF6A3D',
-          600: '#E54F22',
-          700: '#B33D1A',
+          DEFAULT: 'var(--ember)',
+          400: 'var(--ember-400)',
+          500: 'var(--ember-500)',
+          600: 'var(--ember-600)',
+          700: 'var(--ember-700)',
         },
-        moss: '#8FA56C', // accent secondary
+        moss: '#8FA56C',
       },
       fontFamily: {
         display: ['"Fraunces"', 'ui-serif', 'Georgia', 'serif'],

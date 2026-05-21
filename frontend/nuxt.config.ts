@@ -28,6 +28,13 @@ export default defineNuxtConfig({
         { property: "og:type", content: "website" },
         { name: "theme-color", content: "#0A0A0F" },
       ],
+      script: [
+        {
+          // Apply saved theme before first paint to prevent flash
+          innerHTML: `(function(){var t=localStorage.getItem('theme');if(t==='light')document.documentElement.classList.add('light');})();`,
+          type: 'text/javascript',
+        },
+      ],
       link: [
         { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },

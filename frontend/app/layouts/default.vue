@@ -1,8 +1,10 @@
 <script setup lang="ts">
 const cursorRef = ref<HTMLElement | null>(null)
 const isHovering = ref(false)
+const { init: initTheme } = useTheme()
 
 onMounted(() => {
+  initTheme()
   // Magnetic cursor
   let raf = 0
   let tx = 0, ty = 0, cx = 0, cy = 0
