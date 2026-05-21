@@ -2,7 +2,8 @@
 const config = useRuntimeConfig()
 
 // Fetch agregat sekali — server-side untuk SEO
-const { data, error } = await useFetch<any>(`${config.public.apiBase}/public/bootstrap`, {
+const { data, error } = await useFetch<any>('/api/public/bootstrap', {
+  baseURL: config.public.apiBase,
   key: 'bootstrap',
   default: () => ({ profile: null, experiences: [], projects: [] }),
 })
@@ -26,7 +27,7 @@ useHead({
     <div v-if="error" class="min-h-screen flex items-center justify-center">
       <div class="text-center p-8">
         <p class="font-mono text-ember mb-2">◉ Connection error</p>
-        <p class="text-bone-400">Unable to reach API at <code>{{ config.public.apiBase }}</code></p>
+        <p class="text-bone-400">Unable to reach API at <code>{{ config.public.apiBase }}/api</code></p>
         <p class="text-bone-400 text-sm mt-2">Make sure the Laravel backend is running.</p>
       </div>
     </div>

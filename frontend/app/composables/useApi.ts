@@ -7,7 +7,7 @@ export const useApi = () => {
   const auth = useAuthStore()
 
   const api = $fetch.create({
-    baseURL: config.public.apiBase,
+    baseURL: `${config.public.apiBase}/api`,
     onRequest({ options }) {
       const headers = new Headers(options.headers)
       headers.set('Accept', 'application/json')
