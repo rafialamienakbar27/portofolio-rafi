@@ -54,7 +54,7 @@ onMounted(() => {
                  transition-colors flex flex-col"
           @mousemove="onCardMove"
         >
-          <NuxtLink :to="`/projects/${p.slug}`" class="flex flex-col h-full">
+          <NuxtLink :to="`/projects/${p.slug}`" class="flex flex-col flex-1">
             <!-- Cover -->
             <div class="aspect-[16/10] bg-ink-700 overflow-hidden relative shrink-0">
               <img
