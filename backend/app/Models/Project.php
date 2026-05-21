@@ -23,6 +23,7 @@ class Project extends Model
         'year',
         'order_column',
         'is_featured',
+        'badge_label',
         'is_published',
     ];
 

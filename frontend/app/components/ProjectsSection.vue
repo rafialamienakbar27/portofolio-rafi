@@ -51,18 +51,20 @@ onMounted(() => {
           data-project-card
           class="project-card group relative bg-ink-800 border border-ink-700
                  rounded-2xl overflow-hidden hover:border-ember/40
-                 transition-colors"
+                 transition-colors flex flex-col"
           @mousemove="onCardMove"
         >
-          <NuxtLink :to="`/projects/${p.slug}`" class="block h-full">
+          <NuxtLink :to="`/projects/${p.slug}`" class="flex flex-col h-full">
             <!-- Cover -->
-            <div class="aspect-[16/10] bg-ink-700 overflow-hidden relative">
+            <div class="aspect-[16/10] bg-ink-700 overflow-hidden relative shrink-0">
               <img
                 v-if="p.cover_image"
                 :src="p.cover_image"
                 :alt="p.title"
                 loading="lazy"
-                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                :class="p.badge_label === 'Development'
+                  ? 'w-full h-full object-cover opacity-60'
+                  : 'w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105'"
               />
               <div v-else class="w-full h-full flex items-center justify-center text-ink-600 font-display text-7xl">
                 {{ String(i + 1).padStart(2, '0') }}
@@ -72,13 +74,22 @@ onMounted(() => {
               <div class="absolute top-3 left-3 px-2 py-1 rounded-md bg-ink-900/80 backdrop-blur font-mono text-xs text-ember">
                 / {{ String(i + 1).padStart(2, '0') }}
               </div>
-              <div v-if="p.is_featured" class="absolute top-3 right-3 px-2 py-1 rounded-md bg-ember text-ink-900 font-mono text-[10px] uppercase tracking-wider">
-                Featured
+
+              <!-- Dynamic status badge -->
+              <div
+                v-if="p.badge_label"
+                class="absolute top-3 right-3 px-2 py-1 rounded-md font-mono text-[10px] uppercase tracking-wider border"
+                :class="{
+                  'bg-moss/15 text-moss border-moss/30': p.badge_label === 'Released & Improvement',
+                  'bg-blue-500/15 text-blue-400 border-blue-500/30': p.badge_label === 'Development',
+                }"
+              >
+                {{ p.badge_label }}
               </div>
             </div>
 
             <!-- Body -->
-            <div class="p-6">
+            <div class="p-6 flex flex-col flex-1">
               <div class="flex items-center gap-2 font-mono text-[10px] uppercase tracking-wider text-bone-400 mb-3">
                 <span v-if="p.category">{{ p.category }}</span>
                 <span v-if="p.year">· {{ p.year }}</span>
@@ -90,22 +101,25 @@ onMounted(() => {
                 {{ p.subtitle }}
               </p>
 
-              <div v-if="p.technologies?.length" class="mt-4 flex flex-wrap gap-1.5">
-                <span
-                  v-for="t in (p.technologies || []).slice(0, 4)"
-                  :key="t"
-                  class="text-[10px] font-mono px-2 py-0.5 rounded bg-ink-700 text-bone-300"
-                >
-                  {{ t }}
-                </span>
-              </div>
+              <!-- Footer pushed to bottom -->
+              <div class="mt-auto pt-4 space-y-3">
+                <div v-if="p.technologies?.length" class="flex flex-wrap gap-1.5">
+                  <span
+                    v-for="t in (p.technologies || []).slice(0, 4)"
+                    :key="t"
+                    class="text-[10px] font-mono px-2 py-0.5 rounded bg-ink-700 text-bone-300"
+                  >
+                    {{ t }}
+                  </span>
+                </div>
 
-              <!-- Read more arrow -->
-              <div class="mt-5 inline-flex items-center gap-2 font-mono text-xs text-bone-100 group-hover:text-ember transition">
-                <span>Read case study</span>
-                <svg class="w-3 h-3 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
+                <!-- Read more arrow -->
+                <div class="inline-flex items-center gap-2 font-mono text-xs text-bone-100 group-hover:text-ember transition">
+                  <span>Read case study</span>
+                  <svg class="w-3 h-3 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
               </div>
             </div>
           </NuxtLink>

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <!-- Background -->
+  <rect width="1200" height="750" fill="#12121A"/>
+
+  <!-- Subtle grid lines -->
+  <g stroke="#1A1A25" stroke-width="1" opacity="0.8">
+    <line x1="0" y1="150" x2="1200" y2="150"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="450" x2="1200" y2="450"/>
+    <line x1="0" y1="600" x2="1200" y2="600"/>
+    <line x1="200" y1="0" x2="200" y2="750"/>
+    <line x1="400" y1="0" x2="400" y2="750"/>
+    <line x1="600" y1="0" x2="600" y2="750"/>
+    <line x1="800" y1="0" x2="800" y2="750"/>
+    <line x1="1000" y1="0" x2="1000" y2="750"/>
+  </g>
+
+  <!-- Decorative code lines — left -->
+  <g font-family="JetBrains Mono, monospace" font-size="13" fill="#1A1A25">
+    <text x="40" y="80">function deploy() {</text>
+    <text x="40" y="100">  const status = 'building...';</text>
+    <text x="40" y="120">  await compile(modules);</text>
+    <text x="40" y="140">  return pipeline.run();</text>
+    <text x="40" y="160">}</text>
+    <text x="40" y="620">// TODO: finalize schema</text>
+    <text x="40" y="640">// TODO: UI review pending</text>
+    <text x="40" y="660">// ETA: Q3 2025</text>
+  </g>
+
+  <!-- Decorative code lines — right -->
+  <g font-family="JetBrains Mono, monospace" font-size="13" fill="#1A1A25" text-anchor="end">
+    <text x="1160" y="80">Route::get('/api/v1', ...);</text>
+    <text x="1160" y="100">Schema::create('table', fn...);</text>
+    <text x="1160" y="120">$model-&gt;validate()-&gt;save();</text>
+    <text x="1160" y="620">php artisan migrate:fresh</text>
+    <text x="1160" y="640">npm run build</text>
+    <text x="1160" y="660">git push origin main</text>
+  </g>
+
+  <!-- Outer ring glow -->
+  <circle cx="600" cy="375" r="130" fill="none" stroke="#252533" stroke-width="1"/>
+  <circle cx="600" cy="375" r="110" fill="none" stroke="#252533" stroke-width="1" opacity="0.6"/>
+
+  <!-- Center circle bg -->
+  <circle cx="600" cy="375" r="90" fill="#1A1A25"/>
+
+  <!-- Gear / cog icon -->
+  <g transform="translate(600,345)" fill="#FF6A3D" opacity="0.9">
+    <!-- Gear teeth (8 teeth) -->
+    <g>
+      <rect x="-6" y="-38" width="12" height="14" rx="2"/>
+      <rect x="-6" y="24" width="12" height="14" rx="2"/>
+      <rect x="24" y="-6" width="14" height="12" rx="2"/>
+      <rect x="-38" y="-6" width="14" height="12" rx="2"/>
+      <!-- diagonal teeth -->
+      <rect x="14" y="-32" width="12" height="14" rx="2" transform="rotate(45 20 -25)"/>
+      <rect x="-26" y="18" width="12" height="14" rx="2" transform="rotate(45 -20 25)"/>
+      <rect x="14" y="18" width="14" height="12" rx="2" transform="rotate(-45 21 24)"/>
+      <rect x="-28" y="-32" width="14" height="12" rx="2" transform="rotate(-45 -21 -26)"/>
+    </g>
+    <!-- Gear body ring -->
+    <circle cx="0" cy="0" r="26" fill="#1A1A25"/>
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#FF6A3D" stroke-width="3"/>
+    <!-- Inner hole -->
+    <circle cx="0" cy="0" r="10" fill="#FF6A3D"/>
+    <circle cx="0" cy="0" r="5" fill="#1A1A25"/>
+  </g>
+
+  <!-- "Under Development" text -->
+  <text x="600" y="470" font-family="JetBrains Mono, monospace" font-size="15" font-weight="500" fill="#FF6A3D" text-anchor="middle" letter-spacing="4">UNDER DEVELOPMENT</text>
+  <text x="600" y="498" font-family="Inter Tight, sans-serif" font-size="13" fill="#555467" text-anchor="middle">Fitur ini sedang dalam tahap pengembangan</text>
+
+  <!-- Bottom progress bar -->
+  <rect x="450" y="530" width="300" height="3" rx="2" fill="#1A1A25"/>
+  <rect x="450" y="530" width="120" height="3" rx="2" fill="#FF6A3D" opacity="0.7"/>
+</svg>
