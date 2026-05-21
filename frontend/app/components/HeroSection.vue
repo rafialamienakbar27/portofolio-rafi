@@ -57,8 +57,8 @@ onMounted(() => {
           <!-- Big display name -->
           <h1 class="font-display font-light text-mega text-bone-100 leading-[0.92] tracking-tightest">
             <span class="reveal-line block"><span data-hero-line class="inline-block">Rafi</span></span>
-            <span class="reveal-line block"><span data-hero-line class="inline-block font-display-italic text-ember">Al
-                Amien</span></span>
+            <span class="reveal-line block"><span data-hero-line
+                class="inline-block font-display-italic text-ember">Alamien</span></span>
             <span class="reveal-line block"><span data-hero-line class="inline-block">Akbar.</span></span>
           </h1>
 
