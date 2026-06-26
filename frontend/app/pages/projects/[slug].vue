@@ -4,7 +4,7 @@ const config = useRuntimeConfig()
 const slug = route.params.slug as string
 
 const { data: project, error } = await useFetch<any>(
-  `/api/public/projects/${slug}`,
+  `/public/projects/${slug}`,
   {
     baseURL: config.public.apiBase,
     key: `project-${slug}`,
