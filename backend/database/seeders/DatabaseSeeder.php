@@ -123,7 +123,7 @@ class DatabaseSeeder extends Seeder
                 'technologies' => ['Laravel', 'Vue.js', 'PostgreSQL', 'Tailwind CSS'],
                 'category' => 'Government',
                 'year' => 2023,
-                'cover_image' => '/images/projects/tunjangan-tambahan.png',
+                'cover_image' => '/images/new-projects/sim-tunjangan-profesi.png',
                 'is_featured' => false,
                 'badge_label' => 'Released & Improvement',
                 'order_column' => 1,
