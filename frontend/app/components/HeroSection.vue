@@ -110,7 +110,7 @@ onMounted(() => {
           <div data-hero-portrait class="relative">
             <div class="aspect-[3/4] rounded-2xl overflow-hidden border border-ink-600 bg-ink-800 relative">
               <img v-if="profile?.avatar_url" :src="profile.avatar_url" alt="Rafi Al Amien Akbar"
-                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                class="w-full h-full object-cover" />
               <div v-else
                 class="w-full h-full bg-gradient-to-br from-ink-700 to-ink-900 flex items-center justify-center font-display text-6xl text-bone-400/30">
                 RA

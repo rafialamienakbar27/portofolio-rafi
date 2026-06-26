@@ -64,7 +64,7 @@ onMounted(() => {
                 loading="lazy"
                 :class="p.badge_label === 'Development'
                   ? 'w-full h-full object-cover opacity-60'
-                  : 'w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105'"
+                  : 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-105'"
               />
               <div v-else class="w-full h-full flex items-center justify-center text-ink-600 font-display text-7xl">
                 {{ String(i + 1).padStart(2, '0') }}
